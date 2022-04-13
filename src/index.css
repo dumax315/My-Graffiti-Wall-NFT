@@ -1,12 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap'); */
+
 
 body {
+	/* The image used */
+  background-image: url("https://new-minter-tutorial.theohal.repl.co/image.webp");
+
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+/* 	 background-repeat: no-repeat; */
+  background-attachment: fixed;
   margin: 0;
   font-family: 'Rubik';
-  color: #254cdd;
+  color: #ffffff;
+/* 	overflow-x: hidden; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -14,14 +31,28 @@ code {
 }
 
 .Minter {
-  max-width: 80vh;
+/*   max-width: 80vh; */
 /*   max-height: 80vh; */
-  padding: 60px 100px;
-  margin: 0 auto;
+	width:50%;
+
   text-align: left;
+	background:hsla(100, 15%, 38%, 0.7);
+	margin-top: 50px;
 
 }
 
+.innerMinter {
+	margin: 1.2em;
+}
+
+.WallCollectionViewer{
+	width:40%;
+	background:hsla(200, 30%, 38%, 0.7);
+	margin-top: 50px;
+}
+.outerView {
+	margin:1.2em;
+}
 input {
   border-top-style: hidden;
   border-right-style: hidden;
@@ -90,12 +121,31 @@ button {
 	height:48px;
 }
 
-#instructions {
+/* #instructions {
 	display:flex;
-}
+} */
 #graffitiImg {
 	max-height:30vh;
 	max-width:45vw;
 	height:fit-content;
 	border:5px solid red;
+}
+
+iframe {
+  height: 100%;
+}
+
+.main {
+	display:flex;
+	justify-content: space-around;
+}
+
+@media only screen and (max-width: 620px) {
+  /* For mobile phones: */
+  .Minter, .WallCollectionViewer {
+    width: 100%;
+  }
+	.main {
+		display:initial;
+	}
 }

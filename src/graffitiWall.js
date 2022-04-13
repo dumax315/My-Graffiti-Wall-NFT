@@ -34,7 +34,7 @@ const GraffitiWall = (props) => {
 	useEffect(async () => {
 	// Run! Like go get some data from an API.
 		let tokenId = searchParams.get("tokenId")
-		setopenSeaLink("https://testnets.opensea.io/assets/mumbai/0x4154cd1b8E984a95c424682F92d12850f90f6229/"+(tokenId).toString())
+		setopenSeaLink("https://testnets.opensea.io/assets/mumbai/0xB33AAEaAAde302569E52739f284592Cbd2F16E17/"+(tokenId).toString())
 		console.log(tokenId)
 		if(tokenId == null){
 			return navigate("/");
@@ -109,7 +109,7 @@ const GraffitiWall = (props) => {
   return (
 
     <div className="main">
-			<div id="instructions">
+			<div id="instructions" className="WallCollectionViewer">
 				<img id="graffitiImg" src={imgUrl} alt="A Graffiti Wall NFT" class={WallName}></img>
 				<p>
 					<h3>Recommended Steps:</h3>
@@ -126,9 +126,9 @@ const GraffitiWall = (props) => {
 					
 				</p>
 			</div>
-			<h3></h3>
-
+		
 			<div className="Minter">
+				<div className="innerMinter">
 	      <button id="walletButton" onClick={connectWalletPressed}>
 	        {walletAddress.length > 0 ? (
 	          "Connected: " +
@@ -162,13 +162,15 @@ const GraffitiWall = (props) => {
 	      <button id="mintButton" onClick={onMintPressed} disabled={button}>
 	        Graffiti NFT
 	      </button>
+				<div>
 				<img src="https://new-minter-tutorial.theohal.repl.co/loading.gif" alt="loading" id="loading" style={{visibility:((button=="true") ? 'visible' : 'hidden')}}></img>
 	      <p id="status">
 	        {status}
 	      </p>
 	    </div>
 			 <a href={openSeaLink}>{openSeaLink}</a> 
-			<iframe src={openSeaLink} width="100%" style={{height : '90vh'}} ></iframe> 
+				</div>
+			<iframe src={openSeaLink} width="100%" style={{height : '90vh'}} ></iframe> </div>
     </div>
   );
 }

@@ -6,7 +6,7 @@ const web3 = createAlchemyWeb3(alchemyKey);
 
 const contractABI = require('../contract-abi.json')
 const contractChildABI = require('../child-abi.json')
-export const contractAddress = "0x43b107f0f0e82E1591c8121a39Cf9F3E5f079b11";
+export const contractAddress = "0xB33AAEaAAde302569E52739f284592Cbd2F16E17";
 
 
 export const mintNFT = async (name, image) => {
