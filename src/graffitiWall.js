@@ -120,6 +120,7 @@ const GraffitiWall = (props) => {
 					  <li>Add graffiti/edits to your liking and the save the new layer as a PNG.</li>
 						<li>Upload your image here and choose a funny name for you edit.</li>
 						<li>You will get a static NFT of the Wall at this point in time</li>
+						<li>OpenSea won't update right away, click the refresh metadata button (if you get an error image wait 5 minuites and try again)</li>
 					</ol> 
 
 
