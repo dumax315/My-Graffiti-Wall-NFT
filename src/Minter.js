@@ -79,6 +79,11 @@ const Minter = (props) => {
 	        setStatus("🦊 Connect to Metamask using the top right button.");
 	      }
 	    });
+			window.ethereum.on('disconnect', (accounts) => {
+	        setWallet("");
+	        setStatus("🦊 Connect to Metamask using the top right button.");
+	    });
+			window.ethereum.on('chainChanged', (_chainId) => window.location.reload());
 	  } else {
 	    setStatus(
 	      <p>

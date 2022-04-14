@@ -197,6 +197,19 @@ export const connectWallet = async () => {
       const addressArray = await window.ethereum.request({
         method: "eth_requestAccounts",
       });
+			const chainID = await window.ethereum.request({
+      	method: 'eth_chainId' 
+      });
+			
+			console.log(chainID)
+			
+			if (chainID != 0x13881) {
+				alert("Switch To Polygon Mumbai Network \n https://docs.polygon.technology/docs/develop/metamask/config-polygon-on-metamask/")
+        return {
+          address: "",
+          status: "Switch To Polygon Mumbai Network \n https://docs.polygon.technology/docs/develop/metamask/config-polygon-on-metamask/",
+        };
+			}
       const obj = {
         status: "👆🏽 Write a message in the text-field above.",
         address: addressArray[0],
@@ -233,11 +246,27 @@ export const getCurrentWalletConnected = async () => {
       const addressArray = await window.ethereum.request({
         method: "eth_accounts",
       });
+			const chainID = await window.ethereum.request({
+      	method: 'eth_chainId' 
+      });
+			
+			
+			
       if (addressArray.length > 0) {
+				console.log(chainID)
+				if (chainID != 0x13881) {
+					alert("Switch To Polygon Mumbai Network \n https://docs.polygon.technology/docs/develop/metamask/config-polygon-on-metamask/")
+	        return {
+						
+	          address: "",
+	          status: "Switch To Polygon Mumbai Network \n https://docs.polygon.technology/docs/develop/metamask/config-polygon-on-metamask/",
+	        };
+				}
         return {
           address: addressArray[0],
           status: "👆🏽 Write a message in the text-field above.",
         };
+				
       } else {
         return {
           address: "",

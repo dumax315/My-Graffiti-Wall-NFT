@@ -50,6 +50,8 @@ const GraffitiWall = (props) => {
 		imgGetRes.onload = function() {
 			// console.log(this.width)
 			setImgSize([this.width,this.height].join(", "))
+			document.getElementById("graffitiImg").style.maxHeight = ("30vh")
+			document.getElementById("graffitiImg").style.maxWidth = ("45vw")
 		}
 		// imgGetRes.src = imgUrl;
 		
